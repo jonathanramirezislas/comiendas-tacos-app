@@ -3,9 +3,7 @@ import { Text } from 'react-native'
 
 const Menu = () => {
     return (
-        <div>
             <Text>Menu</Text>            
-        </div>
     )
 }
 
