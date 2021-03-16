@@ -1,9 +1,11 @@
 import React, { useReducer } from 'react';
 
+import firebase from '../../firebase';
 import FirebaseReducer from './firebaseReducer';
 import FirebaseContext from './firebaseContext';
 
-
+import { OBTENER_PRODUCTOS_EXITO } from '../../types';
+import _ from 'lodash';
 
 const FirebaseState = props => {
 

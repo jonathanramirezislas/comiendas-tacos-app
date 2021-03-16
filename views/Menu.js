@@ -32,6 +32,28 @@ const Menu = () => {
         obtenerProductos();
     }, []);
 
+    const mostrarHeading = (categoria, i) => {
+
+        if(i > 0 ) { ///prevenir index -1
+            const categoriaAnterior = menu[i - 1].categoria;
+
+            
+            if(categoriaAnterior !== categoria) {
+                return (
+                    <Separator style={styles.separador}>
+                        <Text style={styles.separadorTexto}> {categoria} </Text>
+                    </Separator>
+                )
+            }
+
+        } else { //mostrar la primera categoria 
+            return (
+                <Separator style={styles.separador}>
+                    <Text style={styles.separadorTexto}> {categoria} </Text>
+                </Separator>
+            )
+        }
+    }
  
     return (
         <Container style={globalStyles.contenedor}>
@@ -41,7 +63,7 @@ const Menu = () => {
                         const { imagen, nombre, descripcion, categoria, precio, id } = platillo;
                         return (
                             <Fragment key={id}>
-                               
+                                {mostrarHeading(categoria, i ) }
                                 <ListItem
                                 >
                                     <Thumbnail
