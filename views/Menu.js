@@ -14,7 +14,7 @@ import {
 import globalStyles from '../styles/global';
 
 import FirebaseContext from '../context/firebase/firebaseContext';
-import PedidoContext from '../context/pedidos/pedidosContext';
+import PedidoContext from '../context/perdidos/pedidosContext';
 
 
 const Menu = () => {
@@ -65,6 +65,14 @@ const Menu = () => {
                             <Fragment key={id}>
                                 {mostrarHeading(categoria, i ) }
                                 <ListItem
+                                    onPress={ () => {
+
+                                        // Eliminar algunas propiedades del platillo como existencia 
+                                        const { existencia, ...platillo2 } = platillo;
+
+                                        seleccionarPlatillo(platillo2);
+                                        navigation.navigate("DetallePlatillo");
+                                    }}
                                 >
                                     <Thumbnail
                                         large

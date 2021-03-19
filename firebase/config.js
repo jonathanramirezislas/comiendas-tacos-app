@@ -8,6 +8,7 @@ import {
     MEASUREMENTID,
 } from "@env"
 
+console.log('APIKEY ',APIKEY)
 
 const firebaseConfig = {
     apiKey:APIKEY,
